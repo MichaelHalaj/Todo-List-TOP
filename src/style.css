@@ -14,3 +14,16 @@ html{
     flex: 0 0 200px;
     background-color: #fdba74;
 }
+.list{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-start;
+}
+.list-item{
+    margin: 12px;
+    padding: 8px;
+    align-self: stretch;
+    background-color: #f1f5f9;
+    box-shadow: 5px 5px 5px #e2e8f0;
+}
