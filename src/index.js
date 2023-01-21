@@ -15,6 +15,7 @@ const todayProject = projectObj('Today');
 todayProject.addTodo(todoItem);
 todayProject.addTodo(todoItem2);
 
+function createCheckbox(){}
 
 function displayTodo(projectItem) {
   projectItem.currentTodoList.forEach((item) => {
@@ -24,6 +25,15 @@ function displayTodo(projectItem) {
     const listItemName = document.createElement('div');
     listItemName.classList.add('list-item-name');
     listItemName.textContent = item.title;
+    const container = document.createElement('div');
+    container.classList.add('check-container');
+    const checkbox = document.createElement('input');
+    checkbox.setAttribute('type', 'checkbox');
+    const checkmark = document.createElement('span');
+    checkmark.classList.add('checkmark');
+    container.appendChild(checkbox);
+    container.appendChild(checkmark);
+    listItem.appendChild(container);
     listItem.appendChild(listItemName);
     list.appendChild(listItem);
     list.appendChild(listItem);
