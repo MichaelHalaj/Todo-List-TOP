@@ -8,16 +8,8 @@ const today = document.getElementById('today');
 const upcoming = document.getElementById('upcoming');
 const projects = document.getElementById('projects');
 
-const todoItem = todoObj('Wake Up', 'jdlkasd', '01/01/23', 'high', true);
-const todoItem2 = todoObj('Sleep', 'cnskjdcsnd', '01/01/23', 'high', true);
-
 const todayProject = projectObj('Today');
-todayProject.addTodo(todoItem);
-todayProject.addTodo(todoItem2);
-for (let i = 0; i < 20; i++) {
-  const proj = todoObj(i, 'jdlkasd', '01/01/23', 'high', true);
-  todayProject.addTodo(proj);
-}
+
 function createCheckbox(){}
 function createTodo(item, node) {
   const listItem = document.createElement('div');
@@ -57,7 +49,7 @@ function displayAddTask() {
   title.addEventListener('click', (e) => {
     const proj = todoObj('lmao', 'jdlkasd', '01/01/23', 'high', true);
     todayProject.addTodo(proj);
-    createTodo(todayProject, container);
+    createTodo(proj, container);
     console.log(e);
   });
   title.appendChild(words);
