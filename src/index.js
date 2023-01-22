@@ -19,27 +19,32 @@ for (let i = 0; i < 20; i++) {
   todayProject.addTodo(proj);
 }
 function createCheckbox(){}
-
+function createTodo(item, node) {
+  const listItem = document.createElement('div');
+  listItem.classList.add('list-item');
+  const listItemName = document.createElement('div');
+  listItemName.classList.add('list-item-name');
+  listItemName.textContent = item.title;
+  const container = document.createElement('div');
+  container.classList.add('check-container');
+  const checkbox = document.createElement('input');
+  checkbox.setAttribute('type', 'checkbox');
+  const checkmark = document.createElement('span');
+  checkmark.classList.add('checkmark');
+  container.appendChild(checkbox);
+  container.appendChild(checkmark);
+  listItem.appendChild(container);
+  listItem.appendChild(listItemName);
+  if (node) {
+    list.insertBefore(listItem, node);
+  } else {
+    list.appendChild(listItem);
+  }
+}
 function displayTodo(projectItem) {
   projectItem.currentTodoList.forEach((item) => {
     console.table(item);
-    const listItem = document.createElement('div');
-    listItem.classList.add('list-item');
-    const listItemName = document.createElement('div');
-    listItemName.classList.add('list-item-name');
-    listItemName.textContent = item.title;
-    const container = document.createElement('div');
-    container.classList.add('check-container');
-    const checkbox = document.createElement('input');
-    checkbox.setAttribute('type', 'checkbox');
-    const checkmark = document.createElement('span');
-    checkmark.classList.add('checkmark');
-    container.appendChild(checkbox);
-    container.appendChild(checkmark);
-    listItem.appendChild(container);
-    listItem.appendChild(listItemName);
-    list.appendChild(listItem);
-    list.appendChild(listItem);
+    createTodo(item);
   });
 }
 function displayAddTask() {
@@ -49,6 +54,12 @@ function displayAddTask() {
   title.classList.add('add-title');
   const words = document.createElement('span');
   words.textContent = 'Add Task';
+  title.addEventListener('click', (e) => {
+    const proj = todoObj('lmao', 'jdlkasd', '01/01/23', 'high', true);
+    todayProject.addTodo(proj);
+    createTodo(todayProject, container);
+    console.log(e);
+  });
   title.appendChild(words);
   container.appendChild(title);
   list.appendChild(container);
