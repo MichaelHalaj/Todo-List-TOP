@@ -14,7 +14,10 @@ const todoItem2 = todoObj('Sleep', 'cnskjdcsnd', '01/01/23', 'high', true);
 const todayProject = projectObj('Today');
 todayProject.addTodo(todoItem);
 todayProject.addTodo(todoItem2);
-
+for (let i = 0; i < 20; i++) {
+  const proj = todoObj(i, 'jdlkasd', '01/01/23', 'high', true);
+  todayProject.addTodo(proj);
+}
 function createCheckbox(){}
 
 function displayTodo(projectItem) {
