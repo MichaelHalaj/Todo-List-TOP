@@ -131,7 +131,7 @@ html{
 }
 .panel {
   max-height: 0;
-  margin-left: 32px;
+  margin-left: 56px;
   font-size: 0.8em;
   overflow: hidden;
   transition: max-height 0.2s ease-out;
