@@ -39,6 +39,21 @@ function displayTodo(projectItem) {
     createTodo(item);
   });
 }
+function createForm() {
+  const form = document.createElement('form');
+  const titleInput = document.createElement('input');
+  titleInput.setAttribute('type', 'text');
+  titleInput.classList.add('form-title');
+  const descriptionInput = document.createElement('input');
+  descriptionInput.setAttribute('type', 'text');
+  descriptionInput.classList.add('form-description');
+  const dateInput = document.createElement('input');
+  dateInput.setAttribute('type', 'date');
+  const priorityInput = document.createElement('input');
+  priorityInput.setAttribute('type', 'radio');
+
+
+}
 function displayAddTask() {
   const container = document.createElement('div');
   container.classList.add('add-container');
