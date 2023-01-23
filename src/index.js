@@ -1,6 +1,6 @@
 import './style.css';
 import { noteObj, todoObj, projectObj } from './projects';
-import { removeAllChildren } from './functions';
+import { createAccordion, removeAllChildren } from './functions';
 
 const list = document.querySelector('.list');
 
@@ -9,6 +9,8 @@ const upcoming = document.getElementById('upcoming');
 const projects = document.getElementById('projects');
 
 const todayProject = projectObj('Today');
+
+createAccordion();
 
 function createCheckbox(){}
 function createTodo(item, node) {
@@ -76,3 +78,7 @@ today.addEventListener('click', () => {
   displayTodo(todayProject);
   displayAddTask();
 });
+projects.addEventListener('click', () => {
+  removeAllChildren(document.querySelector('.list'));
+});
+
