@@ -43,18 +43,27 @@ function displayTodo(projectItem) {
 }
 function createForm() {
   const form = document.createElement('form');
+  form.classList.add('todo-form');
+
+  const titleLabel = document.createElement('label');
+  titleLabel.setAttribute('for', 'form-title');
+  titleLabel.textContent = 'Task';
+  form.appendChild(titleLabel);
   const titleInput = document.createElement('input');
   titleInput.setAttribute('type', 'text');
-  titleInput.classList.add('form-title');
+  titleInput.setAttribute('id', 'form-title');
+  form.appendChild(titleInput);
   const descriptionInput = document.createElement('input');
   descriptionInput.setAttribute('type', 'text');
   descriptionInput.classList.add('form-description');
+  form.appendChild(descriptionInput);
   const dateInput = document.createElement('input');
   dateInput.setAttribute('type', 'date');
+  form.appendChild(dateInput);
   const priorityInput = document.createElement('input');
   priorityInput.setAttribute('type', 'radio');
-
-
+  form.appendChild(priorityInput);
+  document.body.appendChild(form);
 }
 function displayAddTask() {
   const container = document.createElement('div');
@@ -73,6 +82,9 @@ function displayAddTask() {
   container.appendChild(title);
   list.appendChild(container);
 }
+
+createForm();
+
 today.addEventListener('click', () => {
   removeAllChildren(document.querySelector('.list'));
   displayTodo(todayProject);
