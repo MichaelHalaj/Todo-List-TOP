@@ -21,4 +21,10 @@ const projectObj = (name, todoList = [], notes = []) => {
   return { currentTodoList, getName, addTodo };
 };
 
+const formCreator = (inputList) => {
+  const getInputList = () => inputList;
+  
+  return { getInputList };
+};
+
 export { noteObj, todoObj, projectObj };

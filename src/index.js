@@ -44,7 +44,7 @@ function displayTodo(projectItem) {
 function createForm() {
   const form = document.createElement('form');
   form.classList.add('todo-form');
-
+  
   const titleLabel = document.createElement('label');
   titleLabel.setAttribute('for', 'form-title');
   titleLabel.textContent = 'Task';
