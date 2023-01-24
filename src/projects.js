@@ -47,8 +47,8 @@ const formCreator = (inputList) => {
     form.appendChild(input);
   };
   const create = (container) => {
-    const form = this.createForm();
-    this.getInputList().forEach((inputField) => {
+    const form = createForm();
+    inputList.forEach((inputField) => {
       createInputField(form, inputField.id, inputField.type, inputField.labelName);
     });
     container.appendChild(form);
@@ -56,4 +56,4 @@ const formCreator = (inputList) => {
   return { getInputList, create };
 };
 
-export { noteObj, todoObj, inputObj, projectObj };
+export { noteObj, todoObj, inputObj, projectObj, formCreator };

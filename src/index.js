@@ -41,12 +41,22 @@ function displayTodo(projectItem) {
     createTodo(item);
   });
 }
-function createInput(){
-  const 
+function createInputForm1() {
+  const inputList = [];
+  const field1 = inputObj('task', 'text', 'Task');
+  inputList.push(field1);
+  const field2 = inputObj('description', 'text', 'Description');
+  inputList.push(field2);
+  const field3 = inputObj('dueDate', 'date', 'Due Date');
+  inputList.push(field3);
+  const field4 = inputObj('priority', 'radio', 'Priority');
+  inputList.push(field4);
+  console.table(inputList);
+  return inputList;
 }
-function createForm(inputList) {
+function createForm(container, inputList) {
   const form = formCreator(inputList);
-  form.create();
+  form.create(container);
 }
 /* function createForm() {
   const form = document.createElement('form');
@@ -90,7 +100,7 @@ function displayAddTask() {
   list.appendChild(container);
 }
 
-createForm();
+createForm(document.body, createInputForm1());
 
 today.addEventListener('click', () => {
   removeAllChildren(document.querySelector('.list'));
