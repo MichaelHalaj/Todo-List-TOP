@@ -1,5 +1,5 @@
 import './style.css';
-import { noteObj, todoObj, projectObj } from './projects';
+import { noteObj, todoObj, projectObj, inputObj, formCreator } from './projects';
 import { createAccordion, removeAllChildren } from './functions';
 
 const list = document.querySelector('.list');
@@ -41,7 +41,14 @@ function displayTodo(projectItem) {
     createTodo(item);
   });
 }
-function createForm() {
+function createInput(){
+  const 
+}
+function createForm(inputList) {
+  const form = formCreator(inputList);
+  form.create();
+}
+/* function createForm() {
   const form = document.createElement('form');
   form.classList.add('todo-form');
   
@@ -64,7 +71,7 @@ function createForm() {
   priorityInput.setAttribute('type', 'radio');
   form.appendChild(priorityInput);
   document.body.appendChild(form);
-}
+} */
 function displayAddTask() {
   const container = document.createElement('div');
   container.classList.add('add-container');
