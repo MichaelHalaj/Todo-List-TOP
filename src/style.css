@@ -7,6 +7,7 @@ html{
     margin: 0;
     padding: 0;
     background-color: #f8fafc;
+    
 }
 .content{
     display: flex;
@@ -154,4 +155,19 @@ form{
   display: flex;
   flex-direction: column;
   backdrop-filter: blur(10px);
+  gap: 1em;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+  border-radius: 4px;
+  width: 300px;
+  backdrop-filter: blur(100px);
+}
+.row{
+  display: flex;
+  flex-direction: column;
+}
+input[type="text"]{
+  outline: none;
+  border: none;
+  border-radius: 4px;
 }

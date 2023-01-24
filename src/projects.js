@@ -46,11 +46,22 @@ const formCreator = (inputList) => {
     input.setAttribute('id', id);
     return input;
   };
-  const createInputField = (form, id, type, labelName) => {
+  const createRow = () => {
+    const row = document.createElement('div');
+    row.classList.add('row');
+    return row;
+  };
+  const createRowInput = (id, type, labelName) => {
+    const row = createRow();
     const label = createLabel(id, labelName);
     const input = createInput(id, type);
-    form.appendChild(label);
-    form.appendChild(input);
+    row.appendChild(label);
+    row.appendChild(input);
+    return row;
+  };
+  const createInputField = (form, id, type, labelName) => {
+    const rowInput = createRowInput(id, type, labelName);
+    form.appendChild(rowInput);
   };
   const create = (container) => {
     const form = createForm();
