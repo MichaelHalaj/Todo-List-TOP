@@ -28,6 +28,12 @@ const projectObj = (name, todoList = [], notes = []) => {
 const formCreator = (inputList) => {
   const getInputList = () => inputList;
   const createForm = () => document.createElement('form');
+  const createSubmit = () => {
+    const button = document.createElement('input');
+    button.setAttribute('type', 'submit');
+    button.setAttribute('value', 'Add');
+    return button;
+  };
   const createLabel = (id, labelName) => {
     const label = document.createElement('label');
     label.setAttribute('for', id);
@@ -51,6 +57,7 @@ const formCreator = (inputList) => {
     inputList.forEach((inputField) => {
       createInputField(form, inputField.id, inputField.type, inputField.labelName);
     });
+    form.appendChild(createSubmit());
     container.appendChild(form);
   };
   return { getInputList, create };

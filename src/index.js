@@ -91,6 +91,7 @@ function displayAddTask() {
   words.textContent = 'Add Task';
   title.addEventListener('click', (e) => {
     const proj = todoObj('lmao', 'jdlkasd', '01/01/23', 'high', true);
+    createForm(document.body, createInputForm1());
     todayProject.addTodo(proj);
     createTodo(proj, container);
     console.log(e);
@@ -100,7 +101,7 @@ function displayAddTask() {
   list.appendChild(container);
 }
 
-createForm(document.body, createInputForm1());
+
 
 today.addEventListener('click', () => {
   removeAllChildren(document.querySelector('.list'));
